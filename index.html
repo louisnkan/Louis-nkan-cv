@@ -4,595 +4,845 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Louis Enobong Nkan — CV</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<meta name="description" content="CV of Louis Enobong Nkan — Mechanical Engineer, Frontend Developer, Project Coordinator. Open to remote and full-time opportunities worldwide.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1814;
-    --ink-light: #5a5650;
-    --ink-faint: #9a9590;
-    --cream: #faf8f4;
-    --warm: #f0ece4;
-    --accent: #b5722a;
-    --rule: #dedad3;
+    --ink: #111827;
+    --mid: #4b5563;
+    --soft: #9ca3af;
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --rule: #e5e7eb;
+    --warm: #fdf6ec;
+    --eng: #1d4ed8;
+    --eng-bg: #eff6ff;
+    --eng-border: #bfdbfe;
+    --dig: #b45309;
+    --dig-bg: #fffbeb;
+    --dig-border: #fde68a;
+    --available: #059669;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--cream);
+    background: var(--bg);
     color: var(--ink);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 17px;
-    line-height: 1.7;
-    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Grain overlay */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 999;
-    opacity: 0.4;
-  }
+  a { color: inherit; text-decoration: none; }
 
-  .page {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 60px 32px 100px;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(22px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── HEADER ── */
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
-    gap: 24px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 48px;
-    animation: fadeUp 0.8s 0.1s ease both;
-  }
-
-  .name {
-    font-size: clamp(2.2rem, 6vw, 3.4rem);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: var(--ink);
-  }
-
-  .name em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .tagline {
-    font-family: 'DM Mono', monospace;
+  /* RIBBON */
+  .ribbon {
+    background: var(--ink);
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    padding: 9px 20px;
     font-size: 0.72rem;
-    font-weight: 300;
-    color: var(--ink-faint);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-top: 10px;
-  }
-
-  .contacts {
-    text-align: right;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--ink-light);
-    line-height: 2;
-    letter-spacing: 0.02em;
-  }
-
-  .contacts a {
-    color: var(--ink-light);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .contacts a:hover { color: var(--accent); }
-
-  /* ── SUMMARY ── */
-  .summary {
-    font-size: 1.15rem;
-    font-weight: 300;
-    color: var(--ink-light);
-    font-style: italic;
-    line-height: 1.8;
-    max-width: 640px;
-    margin-bottom: 56px;
-    padding-left: 20px;
-    border-left: 2px solid var(--accent);
-    animation: fadeUp 0.8s 0.2s ease both;
-  }
-
-  /* ── SECTION ── */
-  section {
-    margin-bottom: 52px;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  section:nth-child(3) { animation-delay: 0.25s; }
-  section:nth-child(4) { animation-delay: 0.32s; }
-  section:nth-child(5) { animation-delay: 0.39s; }
-  section:nth-child(6) { animation-delay: 0.46s; }
-  section:nth-child(7) { animation-delay: 0.53s; }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 24px;
+    font-weight: 500;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
+  .avail-dot {
+    width: 7px; height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
   }
 
-  /* ── EXPERIENCE ENTRY ── */
-  .entry {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 8px 24px;
-    margin-bottom: 36px;
-    padding-bottom: 36px;
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--white);
     border-bottom: 1px solid var(--rule);
+    padding: 40px 24px 32px;
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
   }
 
-  .entry:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
-  .entry-title {
-    font-size: 1.1rem;
+  .name-block h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
     font-weight: 600;
-    color: var(--ink);
-    letter-spacing: -0.01em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
-  .entry-org {
-    font-size: 0.9rem;
-    color: var(--ink-light);
-    font-style: italic;
-    margin-top: 2px;
-  }
+  .name-block h1 em { font-style: italic; color: var(--dig); }
 
-  .entry-date {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--ink-faint);
-    letter-spacing: 0.06em;
-    text-align: right;
-    white-space: nowrap;
-    padding-top: 4px;
-  }
-
-  .entry-body {
-    grid-column: 1 / -1;
+  .degree-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     margin-top: 10px;
-  }
-
-  .entry-body ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .entry-body li {
-    font-size: 0.95rem;
-    color: var(--ink-light);
-    padding: 4px 0 4px 18px;
-    position: relative;
-    line-height: 1.65;
-  }
-
-  .entry-body li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: 300;
-  }
-
-  /* ── SKILLS GRID ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
-  }
-
-  .skill-group h4 {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
+    background: var(--eng-bg);
+    border: 1px solid var(--eng-border);
+    color: var(--eng);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 4px;
     text-transform: uppercase;
-    color: var(--ink-faint);
-    margin-bottom: 8px;
   }
 
-  .skill-group ul {
-    list-style: none;
-  }
-
-  .skill-group li {
-    font-size: 0.9rem;
-    color: var(--ink-light);
-    padding: 3px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  /* ── CERTS ── */
-  .cert-list {
+  .contact-block {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 5px;
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--mid);
   }
 
-  .cert-item {
+  .contact-row {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
+    align-items: center;
+    gap: 6px;
+    justify-content: flex-end;
   }
 
-  .cert-name {
-    font-size: 0.97rem;
-    color: var(--ink);
-    font-weight: 400;
-  }
+  .contact-icon { font-size: 0.75rem; opacity: 0.5; }
 
-  .cert-issuer {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--ink-faint);
-    letter-spacing: 0.06em;
-    white-space: nowrap;
-  }
-
-  /* ── EDUCATION ── */
-  .edu-item {
+  .track-pills {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
     flex-wrap: wrap;
     gap: 8px;
   }
 
-  .edu-degree {
-    font-size: 1rem;
-    font-weight: 600;
+  .pill {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 5px 14px;
+    border-radius: 100px;
+    border: 1.5px solid;
   }
 
-  .edu-school {
-    font-size: 0.9rem;
-    color: var(--ink-light);
+  .pill.eng { background: var(--eng-bg); border-color: var(--eng-border); color: var(--eng); }
+  .pill.dig { background: var(--dig-bg); border-color: var(--dig-border); color: var(--dig); }
+  .pill.both { background: var(--bg); border-color: var(--rule); color: var(--mid); }
+
+  .statement {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.75;
+    font-weight: 300;
+    border-left: 3px solid var(--dig);
+    padding-left: 16px;
     font-style: italic;
-    flex-basis: 100%;
-    margin-top: 2px;
+    font-family: 'Lora', serif;
   }
 
-  /* ── PROJECTS ── */
-  .project-item {
-    padding: 20px;
-    background: var(--warm);
-    border-radius: 4px;
-    margin-bottom: 16px;
-    border-left: 3px solid var(--accent);
+  /* DUAL TRACK BAR */
+  .track-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 860px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--rule);
   }
 
-  .project-item:last-child { margin-bottom: 0; }
-
-  .project-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--ink);
-  }
-
-  .project-tag {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
+  .track-cell {
+    padding: 14px 20px;
+    font-size: 0.68rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: var(--rule);
-    color: var(--ink-faint);
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-left: 10px;
-    vertical-align: middle;
+    font-weight: 600;
+    text-align: center;
+    border-top: 3px solid transparent;
   }
 
-  .project-desc {
-    font-size: 0.9rem;
-    color: var(--ink-light);
-    margin-top: 6px;
+  .track-cell.eng { background: var(--eng-bg); color: var(--eng); border-top-color: var(--eng); }
+  .track-cell.dig { background: var(--dig-bg); color: var(--dig); border-top-color: var(--dig); }
+
+  .track-sub {
+    display: block;
+    font-size: 0.6rem;
+    opacity: 0.65;
+    margin-top: 3px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  /* LAYOUT */
+  .layout {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    align-items: start;
+  }
+
+  .main-col {
+    padding: 32px 24px 60px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .side-col {
+    padding: 32px 20px 60px;
+    background: var(--white);
+  }
+
+  /* SECTION */
+  .section { margin-bottom: 40px; }
+
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .sec-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--soft);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .sec-rule { flex: 1; height: 1px; background: var(--rule); }
+
+  /* ENTRY */
+  .entry {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .entry-title {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  .entry-date {
+    font-size: 0.68rem;
+    color: var(--soft);
+    white-space: nowrap;
+    font-weight: 400;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .entry-org {
+    font-size: 0.82rem;
+    color: var(--mid);
+    font-style: italic;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .track-tag {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-style: normal;
+  }
+
+  .track-tag.eng { background: var(--eng-bg); color: var(--eng); }
+  .track-tag.dig { background: var(--dig-bg); color: var(--dig); }
+  .track-tag.both { background: var(--bg); color: var(--mid); border: 1px solid var(--rule); }
+
+  .entry-points { list-style: none; padding: 0; }
+
+  .entry-points li {
+    font-size: 0.86rem;
+    color: var(--mid);
+    padding: 3px 0 3px 16px;
+    position: relative;
     line-height: 1.6;
   }
 
-  .project-link {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--accent);
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    margin-top: 8px;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
+  .entry-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--dig);
+    font-size: 0.7rem;
+    top: 5px;
   }
 
-  .project-link:hover { border-color: var(--accent); }
+  /* PROJECT CARD */
+  .proj-card {
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: var(--white);
+  }
 
-  /* ── FOOTER ── */
-  footer {
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
+  .proj-card:last-child { margin-bottom: 0; }
+
+  .proj-top {
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .proj-name { font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+
+  .proj-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+
+  .badge {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100px;
+  }
+
+  .badge.live { background: #dcfce7; color: #166534; }
+  .badge.wip  { background: #fef3c7; color: #92400e; }
+  .badge.tech { background: var(--rule); color: var(--mid); }
+
+  .proj-body {
+    padding: 12px 16px 14px;
+    font-size: 0.84rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  .proj-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--dig);
+  }
+
+  /* SKILLS */
+  .skill-group { margin-bottom: 20px; }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-group-head {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 9px;
+  }
+
+  .sg-bar { width: 3px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+  .sg-bar.eng { background: var(--eng); }
+  .sg-bar.dig { background: var(--dig); }
+  .sg-bar.both { background: linear-gradient(to bottom, var(--eng), var(--dig)); }
+
+  .sg-title {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--soft);
+    font-weight: 600;
+  }
+
+  .skill-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .chip {
+    font-size: 0.76rem;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    color: var(--mid);
+    padding: 3px 10px;
+    border-radius: 5px;
+  }
+
+  /* CERT */
+  .cert-item {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cert-item:last-child { border-bottom: none; }
+
+  .cert-name { font-size: 0.84rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+
+  .cert-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 4px;
     flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .cert-issuer { font-size: 0.7rem; color: var(--soft); font-style: italic; }
+
+  .cert-track {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .cert-track.eng { background: var(--eng-bg); color: var(--eng); }
+  .cert-track.both { background: var(--bg); color: var(--mid); border: 1px solid var(--rule); }
+  .cert-track.progress { background: #fef3c7; color: #92400e; }
+
+  /* EDUCATION */
+  .edu-block {
+    background: var(--eng-bg);
+    border: 1px solid var(--eng-border);
+    border-radius: 8px;
+    padding: 14px;
+  }
+
+  .edu-deg { font-size: 0.9rem; font-weight: 600; color: var(--eng); line-height: 1.3; }
+  .edu-school { font-size: 0.78rem; color: var(--mid); margin-top: 4px; font-style: italic; }
+  .edu-year { font-size: 0.7rem; color: var(--soft); margin-top: 6px; }
+
+  .edu-note {
+    margin-top: 10px;
+    font-size: 0.76rem;
+    color: var(--mid);
+    line-height: 1.55;
+    border-top: 1px solid var(--eng-border);
+    padding-top: 10px;
+  }
+
+  /* PROFILE */
+  .meta-list { list-style: none; }
+
+  .meta-list li {
+    font-size: 0.8rem;
+    color: var(--mid);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .meta-list li:last-child { border-bottom: none; }
+
+  .meta-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--soft);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    padding: 24px 20px;
+    text-align: center;
+    font-size: 0.72rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 12px;
   }
 
-  .footer-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--ink-faint);
-    letter-spacing: 0.08em;
-  }
-
-  .download-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
+  .save-btn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--cream);
-    background: var(--ink);
+    font-weight: 600;
+    color: var(--ink);
+    background: #fbbf24;
     border: none;
-    padding: 10px 20px;
+    padding: 9px 22px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: background 0.2s;
+    transition: opacity 0.2s;
   }
 
-  .download-btn:hover { background: var(--accent); }
+  .save-btn:hover { opacity: 0.85; }
 
-  /* ── MOBILE ── */
-  @media (max-width: 560px) {
-    .page { padding: 36px 20px 72px; }
-    header { grid-template-columns: 1fr; }
-    .contacts { text-align: left; }
-    .entry { grid-template-columns: 1fr; }
-    .entry-date { text-align: left; }
-    .cert-item { flex-direction: column; gap: 2px; }
-    footer { flex-direction: column; align-items: flex-start; }
+  /* MOBILE */
+  @media (max-width: 620px) {
+    .layout { grid-template-columns: 1fr; }
+    .main-col { border-right: none; border-bottom: 1px solid var(--rule); padding: 24px 18px 32px; }
+    .side-col { padding: 24px 18px 48px; }
+    .hero { padding: 28px 18px 24px; }
+    .contact-block { text-align: left; }
+    .contact-row { justify-content: flex-start; }
+    .track-bar { grid-template-columns: 1fr; }
   }
 
   @media print {
-    body::before { display: none; }
-    .download-btn { display: none; }
-    .page { padding: 20px; }
-    section { animation: none; }
+    .ribbon, footer { display: none; }
+    body { font-size: 12px; }
+    .layout { grid-template-columns: 1fr 200px; }
+    .hero { padding: 20px; }
+    .main-col, .side-col { padding: 16px; }
   }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero      { animation: fadeUp 0.55s ease both; }
+  .track-bar { animation: fadeUp 0.55s 0.08s ease both; }
+  .layout    { animation: fadeUp 0.55s 0.16s ease both; }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- HEADER -->
-  <header>
-    <div>
-      <h1 class="name">Louis <em>Enobong</em> Nkan</h1>
-      <p class="tagline">Frontend Developer · Project Coordinator · Technical Support</p>
-    </div>
-    <div class="contacts">
-      <div>+234 811 686 7445</div>
-      <div><a href="mailto:louisnkan2002@gmail.com">louisnkan2002@gmail.com</a></div>
-      <div><a href="https://github.com/louisnkan" target="_blank">github.com/louisnkan</a></div>
-      <div>Enugu, Nigeria · Open to Remote</div>
-    </div>
-  </header>
-
-  <!-- SUMMARY -->
-  <p class="summary">
-    Mechanical engineer turned digital builder — I combine systems thinking with hands-on web development, 
-    AI-assisted design, and project coordination. Currently building Clearpen, an AI writing refinement tool 
-    targeting emerging market professionals. Comfortable owning projects end-to-end from brief to deployment.
-  </p>
-
-  <!-- PROJECTS -->
-  <section>
-    <div class="section-label">Projects</div>
-    <div class="project-item">
-      <div>
-        <span class="project-title">Clearpen</span>
-        <span class="project-tag">In Development</span>
-      </div>
-      <p class="project-desc">
-        AI-powered writing refinement tool targeting users who write technically correct English 
-        but struggle with tone and professional register — particularly in emerging markets. 
-        Single-file web app with live tone analysis, multiple AI refinement modes, PDF/DOCX export, 
-        and a freemium model. Built solo and deployed via Vercel with a serverless Anthropic API proxy.
-      </p>
-      <a class="project-link" href="https://github.com/louisnkan" target="_blank">→ github.com/louisnkan</a>
-    </div>
-    <div class="project-item">
-      <div>
-        <span class="project-title">Community Secondary School Website</span>
-        <span class="project-tag">Deployed</span>
-      </div>
-      <p class="project-desc">
-        Full institutional website for CSS Ihoukpara built as a client demonstration project. 
-        React + Vite, animated counters, scroll animations, four pages — developed and deployed 
-        entirely from mobile using a GitHub/Vercel workflow.
-      </p>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section>
-    <div class="section-label">Experience</div>
-
-    <div class="entry">
-      <div>
-        <div class="entry-title">Junior Web Developer & AI Graphic Designer</div>
-        <div class="entry-org">Freelance — Port Harcourt, Nigeria</div>
-      </div>
-      <div class="entry-date">Feb 2023 — Present</div>
-      <div class="entry-body">
-        <ul>
-          <li>Built responsive web applications using HTML, CSS, and JavaScript for client projects, handling requirements gathering through to deployment.</li>
-          <li>Designed AI-assisted graphic elements and visual assets tailored to client briefs, improving turnaround speed without sacrificing quality.</li>
-          <li>Managed client relationships end-to-end — scoping, communication, revisions, and delivery — building a foundation for trust and repeat work.</li>
-          <li>Independently developed and deployed full projects using a mobile-only GitHub/Vercel workflow, demonstrating resourcefulness under constraint.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <div class="entry-title">Lead Project Coordinator — Project Bloom Harmony I</div>
-        <div class="entry-org">Rev. Father Agu — Enugu, Nigeria</div>
-      </div>
-      <div class="entry-date">Dec 2025 — Feb 2026</div>
-      <div class="entry-body">
-        <ul>
-          <li>Coordinated a high-impact community initiative, facilitating cross-functional meetings and aligning stakeholders toward shared milestones.</li>
-          <li>Assessed, monitored, and reported on work progression, ensuring accountability across all workstreams.</li>
-          <li>Fostered collaborative team dynamics, resolving project blockers and keeping momentum through completion.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <div class="entry-title">Maintenance Intern</div>
-        <div class="entry-org">Osita Workshop Engineering — Port Harcourt, Nigeria</div>
-      </div>
-      <div class="entry-date">Jun 2022 — Nov 2022</div>
-      <div class="entry-body">
-        <ul>
-          <li>Assisted in maintenance and repair of heavy-duty machinery including caterpillar vehicles and fuel/diesel trucks.</li>
-          <li>Gained practical experience in diagnostics, preventive maintenance, and safety compliance on large-scale equipment.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <div class="entry-title">Technical Support Intern</div>
-        <div class="entry-org">Sir Ebuka Computer Networking Shop — Port Harcourt, Nigeria</div>
-      </div>
-      <div class="entry-date">Apr 2021 — Oct 2021</div>
-      <div class="entry-body">
-        <ul>
-          <li>Managed PC repairs, software troubleshooting, and basic computer networking in a high-volume environment.</li>
-          <li>Developed strong problem-solving and digital literacy skills through daily hands-on technical work.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section>
-    <div class="section-label">Skills</div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4>Web Development</h4>
-        <ul>
-          <li>HTML & CSS</li>
-          <li>JavaScript</li>
-          <li>React & Vite</li>
-          <li>Vercel Deployment</li>
-          <li>GitHub Workflow</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Design & AI</h4>
-        <ul>
-          <li>AI-Assisted Design</li>
-          <li>Graphic Design</li>
-          <li>UI Layout</li>
-          <li>Prompt Engineering</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Project & Operations</h4>
-        <ul>
-          <li>Project Coordination</li>
-          <li>Stakeholder Mgmt</li>
-          <li>Progress Reporting</li>
-          <li>Cross-team Facilitation</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Technical Support</h4>
-        <ul>
-          <li>PC Repair & Diagnostics</li>
-          <li>Software Troubleshooting</li>
-          <li>Basic Networking</li>
-          <li>HSE Compliance</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section>
-    <div class="section-label">Education</div>
-    <div class="edu-item">
-      <div class="edu-degree">B.Eng. Mechanical Engineering</div>
-    </div>
-    <div class="edu-school">Madonna University, Akpugo/Okija — Enugu, Nigeria</div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section>
-    <div class="section-label">Certifications</div>
-    <div class="cert-list">
-      <div class="cert-item">
-        <span class="cert-name">HSE (Health, Safety & Environment)</span>
-        <span class="cert-issuer">Pinnacle Conterie International</span>
-      </div>
-      <div class="cert-item">
-        <span class="cert-name">Project Management Professional</span>
-        <span class="cert-issuer">Pinnacle Conterie International</span>
-      </div>
-      <div class="cert-item">
-        <span class="cert-name">Facility Management</span>
-        <span class="cert-issuer">Pinnacle Conterie International</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <span class="footer-note">Available for remote & part-time opportunities · English B2+</span>
-    <button class="download-btn" onclick="window.print()">Print / Save as PDF</button>
-  </footer>
-
+<div class="ribbon">
+  <span class="avail-dot"></span>
+  Available for Remote &nbsp;·&nbsp; Part-time &nbsp;·&nbsp; Full-time — Worldwide
 </div>
+
+<div class="hero">
+  <div class="hero-top">
+    <div class="name-block">
+      <h1>Louis <em>Enobong</em> Nkan</h1>
+      <div class="degree-badge">⚙ B.Eng. Mechanical Engineering</div>
+    </div>
+    <div class="contact-block">
+      <div class="contact-row">
+        <span class="contact-icon">✉</span>
+        <a href="mailto:louisnkan2002@gmail.com">louisnkan2002@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">✆</span>
+        <a href="tel:+2348116867445">+234 811 686 7445</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">⌥</span>
+        <a href="https://github.com/louisnkan" target="_blank">github.com/louisnkan</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">◎</span>
+        <span>Port Harcourt, Rivers State · Nigeria</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="track-pills">
+    <span class="pill eng">⚙ Mechanical Engineering</span>
+    <span class="pill dig">✦ Frontend Development</span>
+    <span class="pill dig">◈ AI Generative Design</span>
+    <span class="pill both">↗ Project Coordination</span>
+    <span class="pill both">◻ Technical Support</span>
+  </div>
+
+  <p class="statement">
+    Engineering graduate and self-directed digital builder — combining a systems-thinking 
+    foundation in mechanical engineering with hands-on web development, AI-assisted generative 
+    design, and end-to-end project delivery. Currently building Clearpen, an AI writing tool 
+    for emerging market professionals. Open to remote, part-time, or full-time opportunities worldwide.
+  </p>
+</div>
+
+<div class="track-bar">
+  <div class="track-cell eng">
+    ⚙ Engineering Track
+    <span class="track-sub">Mechanical · Maintenance · Safety · Facility · Coordination</span>
+  </div>
+  <div class="track-cell dig">
+    ✦ Digital Track
+    <span class="track-sub">Web Dev · AI Design · Technical Support · Product</span>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- MAIN -->
+  <div class="main-col">
+
+    <div class="section">
+      <div class="sec-head"><div class="sec-label">Projects</div><div class="sec-rule"></div></div>
+
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-name">Clearpen — AI Writing Refinement Tool</div>
+          <div class="proj-tags">
+            <span class="badge wip">In Development</span>
+            <span class="badge tech">React · Vercel · Anthropic API</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          Sole designer and developer of an AI-powered writing tool for professionals in emerging 
+          markets who write technically correct English but struggle with tone and register. 
+          Features live tone analysis, multiple AI refinement modes, and PDF/DOCX export. 
+          Deployed via Vercel with a serverless API proxy. Freemium model with Paystack 
+          payment integration in progress.
+          <br><a class="proj-link" href="https://github.com/louisnkan" target="_blank">→ github.com/louisnkan</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-name">CSS Ihoukpara — Institutional Website</div>
+          <div class="proj-tags">
+            <span class="badge live">Live</span>
+            <span class="badge tech">React · Vite</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          Full four-page institutional website for Community Secondary School, Ihoukpara, 
+          Enugu State. Responsive layout with animated counters and scroll-triggered animations. 
+          Scoped, designed, built, and deployed entirely from a mobile device via GitHub and Vercel.
+          <br><a class="proj-link" href="https://css-ihoukpara.vercel.app/" target="_blank">→ css-ihoukpara.vercel.app</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-head"><div class="sec-label">Experience</div><div class="sec-rule"></div></div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">NYSC Corps Member — Science Teacher</div>
+          <div class="entry-date">2025 — Present</div>
+        </div>
+        <div class="entry-org">
+          National Youth Service Corps · Enugu State, Nigeria
+          <span class="track-tag both">Both Tracks</span>
+        </div>
+        <ul class="entry-points">
+          <li>Delivering science subject instruction at secondary school level as part of Nigeria's mandatory national service programme — demonstrating adaptability, discipline, and civic responsibility.</li>
+          <li>Managing lesson planning, student assessment, and classroom coordination independently across concurrent professional commitments.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Lead Project Coordinator — Bloom Harmony I</div>
+          <div class="entry-date">Dec 2025 — Feb 2026</div>
+        </div>
+        <div class="entry-org">
+          Rev. Father Agu · Enugu, Nigeria
+          <span class="track-tag both">Both Tracks</span>
+        </div>
+        <ul class="entry-points">
+          <li>Coordinated a high-impact community initiative end-to-end — managing a multi-person team, aligning stakeholders on milestones, and delivering within scope and timeline.</li>
+          <li>Facilitated cross-functional planning meetings and produced structured progress reports for leadership throughout the project lifecycle.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Web Developer & AI Generative Designer</div>
+          <div class="entry-date">Feb 2023 — Present</div>
+        </div>
+        <div class="entry-org">
+          Independent Practice · Port Harcourt, Nigeria
+          <span class="track-tag dig">Digital</span>
+        </div>
+        <ul class="entry-points">
+          <li>Designed and developed responsive client websites using HTML, CSS, JavaScript, and React — owning the full project lifecycle from scoping through Vercel deployment.</li>
+          <li>Created visual assets using AI generative image platforms including Gemini and Nano Banana, accelerating creative output for client deliverables.</li>
+          <li>Maintained an entirely mobile-based development workflow — demonstrating technical self-sufficiency and adaptability without conventional desktop tooling.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Maintenance Engineering Intern</div>
+          <div class="entry-date">Jun 2022 — Nov 2022</div>
+        </div>
+        <div class="entry-org">
+          Osita Workshop · Port Harcourt, Nigeria
+          <span class="track-tag eng">Engineering</span>
+        </div>
+        <ul class="entry-points">
+          <li>Assisted in scheduled maintenance, diagnostics, and repair of heavy-duty machinery including caterpillar vehicles and diesel trucks in a live industrial environment.</li>
+          <li>Applied HSE protocols and preventive maintenance procedures, contributing to a safe and compliant workshop operation.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Technical Support Intern</div>
+          <div class="entry-date">Apr 2021 — Oct 2021</div>
+        </div>
+        <div class="entry-org">
+          Sir Ebuka Computer Shop · Port Harcourt, Nigeria
+          <span class="track-tag dig">Digital</span>
+        </div>
+        <ul class="entry-points">
+          <li>Resolved PC hardware faults, software issues, and basic networking problems in a high-volume walk-in environment.</li>
+          <li>Developed rapid diagnostic instincts through consistent hands-on troubleshooting under time pressure.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div><!-- /main-col -->
+
+  <!-- SIDE -->
+  <div class="side-col">
+
+    <div class="section">
+      <div class="sec-head"><div class="sec-label">Education</div><div class="sec-rule"></div></div>
+      <div class="edu-block">
+        <div class="edu-deg">B.Eng. Mechanical Engineering</div>
+        <div class="edu-school">Madonna University, Akpugo/Okija — Enugu, Nigeria</div>
+        <div class="edu-year">🎓 Graduated November 2024</div>
+        <div class="edu-note">
+          Engineering foundation supports systems-level thinking applied equally to 
+          mechanical contexts and to software architecture, product design, and 
+          structured problem-solving.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-head"><div class="sec-label">Skills</div><div class="sec-rule"></div></div>
+
+      <div class="skill-group">
+        <div class="skill-group-head"><div class="sg-bar dig"></div><div class="sg-title">Web Development</div></div>
+        <div class="skill-chips">
+          <span class="chip">HTML & CSS</span><span class="chip">JavaScript</span>
+          <span class="chip">React</span><span class="chip">Vite</span>
+          <span class="chip">Vercel</span><span class="chip">GitHub</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head"><div class="sg-bar dig"></div><div class="sg-title">AI & Design</div></div>
+        <div class="skill-chips">
+          <span class="chip">Gemini Image Gen</span><span class="chip">Nano Banana</span>
+          <span class="chip">Prompt Engineering</span><span class="chip">UI Layout</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head"><div class="sg-bar both"></div><div class="sg-title">Project & Ops</div></div>
+        <div class="skill-chips">
+          <span class="chip">Project Coordination</span><span class="chip">Stakeholder Mgmt</span>
+          <span class="chip">Reporting</span><span class="chip">Team Facilitation</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head"><div class="sg-bar eng"></div><div class="sg-title">Engineering & Safety</div></div>
+        <div class="skill-chips">
+          <span class="chip">Heavy Machinery</span><span class="chip">Preventive Maintenance</span>
+          <span class="chip">HSE Compliance</span><span class="chip">Diagnostics</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-head"><div class="sg-bar dig"></div><div class="sg-title">Technical Support</div></div>
+        <div class="skill-chips">
+          <span class="chip">PC Repair</span><span class="chip">Software Troubleshooting</span>
+          <span class="chip">Basic Networking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-head"><div class="sec-label">Certifications</div><div class="sec-rule"></div></div>
+
+      <div class="cert-item">
+        <div class="cert-name">HSE — Health, Safety & Environment</div>
+        <div class="cert-meta">
+          <span class="cert-issuer">Pinnacle Conterie Intl.</span>
+          <span class="cert-track eng">Engineering</span>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Project Management Professional</div>
+        <div class="cert-meta">
+          <span class="cert-issuer">Pinnacle Conterie Intl.</span>
+          <span class="cert-track both">Cross-track</span>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Facility Management</div>
+        <div class="cert-meta">
+          <span class="cert-issuer">Pinnacle Conterie Intl.</span>
+          <span class="cert-track eng">Engineering</span>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Claude AI — Code 101</div>
+        <div class="cert-meta">
+          <span class="cert-issuer">Anthropic · In Progress</span>
+          <span class="cert-track progress">In Progress</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-head"><div class="sec-label">Profile</div><div class="sec-rule"></div></div>
+      <ul class="meta-list">
+        <li><span class="meta-label">Location</span><span>Port Harcourt, Rivers State</span></li>
+        <li><span class="meta-label">State of Origin</span><span>Akwa Ibom, Nigeria</span></li>
+        <li><span class="meta-label">Nationality</span><span>Nigerian</span></li>
+        <li><span class="meta-label">Language</span><span>English (Professional)</span></li>
+        <li><span class="meta-label">Availability</span><span style="color:var(--available);font-weight:500">● Open Now</span></li>
+        <li><span class="meta-label">Work Type</span><span>Remote · Part-time · Full-time</span></li>
+        <li><span class="meta-label">Schedule</span><span>Flexible · Negotiable</span></li>
+      </ul>
+    </div>
+
+  </div><!-- /side-col -->
+</div><!-- /layout -->
+
+<footer>
+  <span>Louis Enobong Nkan · louis-nkan-cv.vercel.app · Updated March 2026</span>
+  <button class="save-btn" onclick="window.print()">Save as PDF</button>
+</footer>
+
 </body>
 </html>
