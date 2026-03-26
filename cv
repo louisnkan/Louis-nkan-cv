@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Louis Enobong Nkan — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1814;
+    --ink-light: #5a5650;
+    --ink-faint: #9a9590;
+    --cream: #faf8f4;
+    --warm: #f0ece4;
+    --accent: #b5722a;
+    --rule: #dedad3;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 32px 100px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .name {
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: var(--ink-faint);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+
+  .contacts {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-light);
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
+
+  .contacts a {
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contacts a:hover { color: var(--accent); }
+
+  /* ── SUMMARY ── */
+  .summary {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--ink-light);
+    font-style: italic;
+    line-height: 1.8;
+    max-width: 640px;
+    margin-bottom: 56px;
+    padding-left: 20px;
+    border-left: 2px solid var(--accent);
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  /* ── SECTION ── */
+  section {
+    margin-bottom: 52px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  section:nth-child(3) { animation-delay: 0.25s; }
+  section:nth-child(4) { animation-delay: 0.32s; }
+  section:nth-child(5) { animation-delay: 0.39s; }
+  section:nth-child(6) { animation-delay: 0.46s; }
+  section:nth-child(7) { animation-delay: 0.53s; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── EXPERIENCE ENTRY ── */
+  .entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 24px;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .entry-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .entry-org {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .entry-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    text-align: right;
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  .entry-body {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+  }
+
+  .entry-body ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .entry-body li {
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    padding: 4px 0 4px 18px;
+    position: relative;
+    line-height: 1.65;
+  }
+
+  .entry-body li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 300;
+  }
+
+  /* ── SKILLS GRID ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+
+  .skill-group h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+
+  .skill-group ul {
+    list-style: none;
+  }
+
+  .skill-group li {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    padding: 3px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── CERTS ── */
+  .cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .cert-name {
+    font-size: 0.97rem;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .cert-issuer {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .edu-degree {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .edu-school {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    font-style: italic;
+    flex-basis: 100%;
+    margin-top: 2px;
+  }
+
+  /* ── PROJECTS ── */
+  .project-item {
+    padding: 20px;
+    background: var(--warm);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .project-item:last-child { margin-bottom: 0; }
+
+  .project-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .project-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--rule);
+    color: var(--ink-faint);
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+
+  .project-link {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    margin-top: 8px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .project-link:hover { border-color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+  }
+
+  .download-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--ink);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .download-btn:hover { background: var(--accent); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 560px) {
+    .page { padding: 36px 20px 72px; }
+    header { grid-template-columns: 1fr; }
+    .contacts { text-align: left; }
+    .entry { grid-template-columns: 1fr; }
+    .entry-date { text-align: left; }
+    .cert-item { flex-direction: column; gap: 2px; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media print {
+    body::before { display: none; }
+    .download-btn { display: none; }
+    .page { padding: 20px; }
+    section { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div>
+      <h1 class="name">Louis <em>Enobong</em> Nkan</h1>
+      <p class="tagline">Frontend Developer · Project Coordinator · Technical Support</p>
+    </div>
+    <div class="contacts">
+      <div>+234 811 686 7445</div>
+      <div><a href="mailto:louisnkan2002@gmail.com">louisnkan2002@gmail.com</a></div>
+      <div><a href="https://github.com/louisnkan" target="_blank">github.com/louisnkan</a></div>
+      <div>Enugu, Nigeria · Open to Remote</div>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <p class="summary">
+    Mechanical engineer turned digital builder — I combine systems thinking with hands-on web development, 
+    AI-assisted design, and project coordination. Currently building Clearpen, an AI writing refinement tool 
+    targeting emerging market professionals. Comfortable owning projects end-to-end from brief to deployment.
+  </p>
+
+  <!-- PROJECTS -->
+  <section>
+    <div class="section-label">Projects</div>
+    <div class="project-item">
+      <div>
+        <span class="project-title">Clearpen</span>
+        <span class="project-tag">In Development</span>
+      </div>
+      <p class="project-desc">
+        AI-powered writing refinement tool targeting users who write technically correct English 
+        but struggle with tone and professional register — particularly in emerging markets. 
+        Single-file web app with live tone analysis, multiple AI refinement modes, PDF/DOCX export, 
+        and a freemium model. Built solo and deployed via Vercel with a serverless Anthropic API proxy.
+      </p>
+      <a class="project-link" href="https://github.com/louisnkan" target="_blank">→ github.com/louisnkan</a>
+    </div>
+    <div class="project-item">
+      <div>
+        <span class="project-title">Community Secondary School Website</span>
+        <span class="project-tag">Deployed</span>
+      </div>
+      <p class="project-desc">
+        Full institutional website for CSS Ihoukpara built as a client demonstration project. 
+        React + Vite, animated counters, scroll animations, four pages — developed and deployed 
+        entirely from mobile using a GitHub/Vercel workflow.
+      </p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-label">Experience</div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">Junior Web Developer & AI Graphic Designer</div>
+        <div class="entry-org">Freelance — Port Harcourt, Nigeria</div>
+      </div>
+      <div class="entry-date">Feb 2023 — Present</div>
+      <div class="entry-body">
+        <ul>
+          <li>Built responsive web applications using HTML, CSS, and JavaScript for client projects, handling requirements gathering through to deployment.</li>
+          <li>Designed AI-assisted graphic elements and visual assets tailored to client briefs, improving turnaround speed without sacrificing quality.</li>
+          <li>Managed client relationships end-to-end — scoping, communication, revisions, and delivery — building a foundation for trust and repeat work.</li>
+          <li>Independently developed and deployed full projects using a mobile-only GitHub/Vercel workflow, demonstrating resourcefulness under constraint.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">Lead Project Coordinator — Project Bloom Harmony I</div>
+        <div class="entry-org">Rev. Father Agu — Enugu, Nigeria</div>
+      </div>
+      <div class="entry-date">Dec 2025 — Feb 2026</div>
+      <div class="entry-body">
+        <ul>
+          <li>Coordinated a high-impact community initiative, facilitating cross-functional meetings and aligning stakeholders toward shared milestones.</li>
+          <li>Assessed, monitored, and reported on work progression, ensuring accountability across all workstreams.</li>
+          <li>Fostered collaborative team dynamics, resolving project blockers and keeping momentum through completion.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">Maintenance Intern</div>
+        <div class="entry-org">Osita Workshop Engineering — Port Harcourt, Nigeria</div>
+      </div>
+      <div class="entry-date">Jun 2022 — Nov 2022</div>
+      <div class="entry-body">
+        <ul>
+          <li>Assisted in maintenance and repair of heavy-duty machinery including caterpillar vehicles and fuel/diesel trucks.</li>
+          <li>Gained practical experience in diagnostics, preventive maintenance, and safety compliance on large-scale equipment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">Technical Support Intern</div>
+        <div class="entry-org">Sir Ebuka Computer Networking Shop — Port Harcourt, Nigeria</div>
+      </div>
+      <div class="entry-date">Apr 2021 — Oct 2021</div>
+      <div class="entry-body">
+        <ul>
+          <li>Managed PC repairs, software troubleshooting, and basic computer networking in a high-volume environment.</li>
+          <li>Developed strong problem-solving and digital literacy skills through daily hands-on technical work.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Web Development</h4>
+        <ul>
+          <li>HTML & CSS</li>
+          <li>JavaScript</li>
+          <li>React & Vite</li>
+          <li>Vercel Deployment</li>
+          <li>GitHub Workflow</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Design & AI</h4>
+        <ul>
+          <li>AI-Assisted Design</li>
+          <li>Graphic Design</li>
+          <li>UI Layout</li>
+          <li>Prompt Engineering</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Project & Operations</h4>
+        <ul>
+          <li>Project Coordination</li>
+          <li>Stakeholder Mgmt</li>
+          <li>Progress Reporting</li>
+          <li>Cross-team Facilitation</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Technical Support</h4>
+        <ul>
+          <li>PC Repair & Diagnostics</li>
+          <li>Software Troubleshooting</li>
+          <li>Basic Networking</li>
+          <li>HSE Compliance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-label">Education</div>
+    <div class="edu-item">
+      <div class="edu-degree">B.Eng. Mechanical Engineering</div>
+    </div>
+    <div class="edu-school">Madonna University, Akpugo/Okija — Enugu, Nigeria</div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <div class="section-label">Certifications</div>
+    <div class="cert-list">
+      <div class="cert-item">
+        <span class="cert-name">HSE (Health, Safety & Environment)</span>
+        <span class="cert-issuer">Pinnacle Conterie International</span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">Project Management Professional</span>
+        <span class="cert-issuer">Pinnacle Conterie International</span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">Facility Management</span>
+        <span class="cert-issuer">Pinnacle Conterie International</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-note">Available for remote & part-time opportunities · English B2+</span>
+    <button class="download-btn" onclick="window.print()">Print / Save as PDF</button>
+  </footer>
+
+</div>
+</body>
+</html>
